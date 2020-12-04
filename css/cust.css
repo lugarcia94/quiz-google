@@ -1,0 +1,28 @@
+.MyFont {
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+ color: #2a9abd;
+ font-weight: bold;
+ line-height: 90%;
+ font-size: 27px;
+}
+.lead{
+   font-size: 17px; 
+}
+.card-title{
+ font-size: 25px;
+}
+.big{
+ color: rgb(0, 0, 0) !important;
+font-weight: bold;
+ font-size: 35px;
+}
+.br{
+ background-color: #fb6801;
+border-color:#fb6801;
+}
+.btn-primary:hover {
+    font-weight: bold;
+    color: #fff;
+    background-color: #fb6801;
+    border-color: #fb6801;
+}
