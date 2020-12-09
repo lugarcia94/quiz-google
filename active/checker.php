@@ -8,8 +8,8 @@
         $FONTE_DE_RENDA = (isset($_POST['param5'])) ? $_POST['param5'] : 'n\a';
         $NEGATIVADO = (isset($_POST['param6'])) ? $_POST['param6'] : 'n\a';
 
-        $key = "<token>";
-        $url = "https://api.thechecker.co/v2/verify?email=".urlencode($email)."&api_key=".$key."";
+        $key = "81b54361fa32fd5dd2030cc35da0c0808b2b5d07e7a752ea4fa0a65b67477bed";
+        $url = 'https://api.thechecker.co/v2/verify?email=".urlencode($email)."&api_key=".$key.""';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
