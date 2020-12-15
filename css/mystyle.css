@@ -24,7 +24,15 @@ body {
 }
 
 
+header.bg-color, footer.bg-color.d-flex.justify-content-between {
+     background: #fff;
+     color :#000;
+}
 
+header.bg-color, footer.bg-color.d-flex.justify-content-between .links a {
+     color: #000;
+     margin: 0 20px;
+ }
 .gira-gira {
      position: relative;
      margin: 10px auto;
@@ -225,7 +233,7 @@ footer {
 
      .image,
      #picture {
-          width: 85%;
+          width: 95%;
           margin: 20px auto;
           padding-top: 20px;
      }
@@ -278,3 +286,29 @@ footer {
           margin-top: 0px;
      }
 }
+
+@media(max-width: 991px) {
+     #respostas_id button:before  {
+          content: '';
+          width: 20px;
+          height: 20px;
+          display: block;
+          position: absolute;
+          background: #fff;
+          border-radius: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+     
+     #respostas_id button{
+         width: 90%;
+         margin: 5px auto;
+         position: relative;
+         font-size: 15px;
+         height: 50px;
+         border-radius: 25px;
+     }
+
+     img#picture {display: none}
+}
+

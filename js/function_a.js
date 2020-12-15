@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var traking = window.location.href;
     var pos = traking.indexOf('?');
     if (pos == -1) {
@@ -16,7 +16,7 @@ function charge(question, resp) {
     var subtitulo = "Responda às perguntas abaixo para que nossa tecnologia possa escolher o melhor cartão de crédito para você.";
     var total_questoes = "3";
     var questao_atual = "";
-    
+
     var pergunta = "";
     var respostas = "";
     var percentual = "";
@@ -27,13 +27,13 @@ function charge(question, resp) {
     if (question == 1) {
         pergunta = "O que é mais importante para você?";
         picture.src = './img/card01.png';
-        respostas = '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,1);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Limite de Crédito Alto\');"> Limite de Crédito Alto</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,2);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Sem anuidade\');"> Sem anuidade</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,3);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Milhas aéreas\');"> Milhas aéreas</button>';
+        respostas = '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,1);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Limite de Crédito Alto\');"> Limite de Crédito Alto</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,2);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Sem anuidade\');"> Crédito imediato</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,3);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Milhas aéreas\');"> Sem consulta ao SPC/SERASA</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas" onclick="charge(2,4);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Interesse\', \'Limite de Crédito Alto\');"> Anuidade grátis</button>';
         questao_atual = 1;
     } else if (question == 2) {
         $('#resp_1').val(resp);
         pergunta = "Em qual grupo você se encaixa?";
         picture.src = './img/card02.png';
-        fbq('track', 'Quiz Start no UTUA');
+        fbq('track', 'Quiz Start no Altotietê');
         respostas = '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bg-primary text-white bordas"  onclick="charge(3,1);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Fonte de Renda\', \'Aposentado / Pensonista / Servidor Público\');">Aposentado / Pensonista / Servidor Público</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas"  onclick="charge(3,2);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Fonte de Renda\', \'Concurseiro / Estudante universitario\');">Concurseiro / Estudante universitario</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas"  onclick="charge(3,3);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Fonte de Renda\', \'Carteira assinada / Autonomo / Empreendedor\');">Carteira assinada / Autonomo / Empreendedor</button>' + '<button class="btn btn-lg btn-block btn-outline-primary bg-primary text-white bordas"  onclick="charge(3,4);ga(\'send\', \'event\', \'Quiz\', \'Quiz - Fonte de Renda\', \'Estou Desempregado\');">Estou Desempregado</button>';
         questao_atual = 2;
     } else if (question == 3) {
@@ -60,7 +60,7 @@ function charge(question, resp) {
                 <div id="show-me"></div>
 	         <button style="margin-bottom: 20px" onclick="send_info()" id="icone" class="btn btn-block btn-outline-primary bg-primary text-white bordas">VER MEU CARTÃO DE CRÉDITO</button>
                 <label id="label_check" class="form-check-label" for="exampleCheck1">
-                <a href="https://utua.com.br/politica-de-privacidade/" target="_blank"> Políticas de privacidade </a>
+                <a href="https://altotieteweb.com.br/politica-de-privacidade/" target="_blank"> Políticas de privacidade </a>
                 </label>
               </div>
             </div>`;
@@ -93,14 +93,14 @@ function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
-  }
+}
 
 function send_info() {
     var resp1 = $('#resp_1').val();
     var resp2 = $('#resp_2').val();
     var resp3 = $('#resp_3').val();
     var user_id = getCookie('_ga');
-    var q1 = ['Limite de Crédito Alto', 'Sem anuidade', 'Milhas aéreas'];
+    var q1 = ['Limite de Crédito Alto', 'Crédito imediato', 'Sem consulta ao SPC/SERASA', 'Anuidade grátis'];
     var q2 = ['Aposentado | Pensonista | Servidor Público', 'Concurseiro | Estudante universitario', 'Carteira assinada | Autonomo | Empreendedor', 'Estou Desempregado</button>'];
     var q3 = ['Sim', 'Não'];
     q1 = q1[(resp1 - 1)];
@@ -119,23 +119,32 @@ function send_info() {
     $('#show-me').show();
     var icone = document.getElementById('icone').innerHTML = "AGUARDE ENQUANTO PREPARAMOS SEU CARTÃO";
     var traking = $('#traking_id').val();
-    var link = 'https://utua.com.br/category/cartao-de-credito/' + traking;
+    var link = 'http://altotieteweb.com.br/cartao-de-credito-banco-pan/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     if (resp1 == 1) {
-        link = 'https://utua.com.br/cartao-negativado-mercado-pago/' + traking;
-        console.log("traking: " + traking)
+        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
     if (resp1 == 2) {
-        link = 'https://utua.com.br/cartao-de-credito-santander/' + traking;
+        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
     if (resp1 == 3) {
-        link = 'https://utua.com.br/cartao-de-credito-itau/' + traking;
+        link = 'http://altotieteweb.com.br/superdigital-nao-consulta-spc-serasa/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
     if (resp2 == 1 && resp3 == 1) {
-        link = 'https://utua.com.br/cartao-negativado-bmg/' + traking;
+        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
     if ((resp2 == 2 || resp2 == 3 || resp2 == 4) && resp3 == 1) {
-        link = 'https://utua.com.br/cartao-de-credito-pan/' + traking;
+        link = 'http://altotieteweb.com.br/superdigital-nao-consulta-spc-serasa/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
+
+    if ((resp2 == 2)) {
+        link = 'http://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+    }
+
+    if ((resp3 == 2)) {
+        link = 'http://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+    }
+
+
     var nome = $('#nome_send').val();
     var email = $('#email_send').val();
     var r = $('#listaactive_id').val();
@@ -158,11 +167,11 @@ function send_info() {
 
         var domain = email.split("@");
 
-        if(domain[1]!="hotmail.com" && domain[1]!="aol.com" && domain[1]!="bol.com.br" && domain[1]!="gmail.com" && domain[1]!="yahoo.com"){
+        if (domain[1] != "hotmail.com" && domain[1] != "aol.com" && domain[1] != "bol.com.br" && domain[1] != "gmail.com" && domain[1] != "yahoo.com") {
             document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
             $('#show-me').hide();
             $("#email_send").addClass("is-invalid");
-                return;
+            return;
         }
 
         $.ajax({
@@ -177,19 +186,19 @@ function send_info() {
                 'param6': q3
             },
             dataType: 'html',
-            beforeSend: function() {
-               
-               
-            },
-            success: function(retorno) {
+            beforeSend: function () {
 
-                if(retorno == "5"){
+
+            },
+            success: function (retorno) {
+
+                if (retorno == "5") {
                     $('#show-me').hide();
                     $("#email_send").addClass("is-invalid");
                     document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
                     return;
                 }
-                fbq('track', 'Botão Quiz no UTUA');
+                fbq('track', 'Botão Quiz no Alto Tietê');
                 ga('send', 'event', 'Quiz', 'QuizLead', '');
                 $.ajax({
                     url: "active/examples.php",
@@ -201,17 +210,18 @@ function send_info() {
                         'param4': q1,
                         'param5': q2,
                         'param6': q3,
-                        'param7':user_id,
-			'param8': gam_utmsource,
+                        'param7': user_id,
+                        'param8': gam_utmsource,
                         'param9': gam_utmmedium,
                         'param10': gam_utmcampaign
                     },
-                    dataType: 'html'});
+                    dataType: 'html'
+                });
 
-                    window.location.href = link;
+                window.location.href = link;
 
             },
-            error: function(erro, er) {
+            error: function (erro, er) {
                 $('#show-me').hide();
                 $("#email_send").addClass("is-invalid");
                 document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
