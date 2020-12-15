@@ -140,7 +140,7 @@ function send_info() {
         link = 'http://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
 
-    if ((resp3 == 2)) {
+    if ((resp3 == 1)) {
         link = 'http://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
 
@@ -167,12 +167,12 @@ function send_info() {
 
         var domain = email.split("@");
 
-        if (domain[1] != "hotmail.com" && domain[1] != "aol.com" && domain[1] != "bol.com.br" && domain[1] != "gmail.com" && domain[1] != "yahoo.com") {
-            document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
-            $('#show-me').hide();
-            $("#email_send").addClass("is-invalid");
-            return;
-        }
+        // if (domain[1] != "hotmail.com" && domain[1] != "aol.com" && domain[1] != "bol.com.br" && domain[1] != "gmail.com" && domain[1] != "yahoo.com") {
+        //     document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
+        //     $('#show-me').hide();
+        //     $("#email_send").addClass("is-invalid");
+        //     return;
+        // }
 
         $.ajax({
             url: "active/checker.php",
