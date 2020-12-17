@@ -1,6 +1,6 @@
 <?php
 
-	define("ACTIVECAMPAIGN_URL", "https://begrowth.api-us1.com");
-	define("ACTIVECAMPAIGN_API_KEY", "73997f6a29f2f1ecf865c00b93d528f886cb9242ecf0f3f5c4f4e6791dede0cb7cd562c5");
+	define("ACTIVECAMPAIGN_URL", "https://gmalheros.api-us1.com");
+	define("ACTIVECAMPAIGN_API_KEY", "17ece2c4f3f72cd1fe280b84d0e23ae1fd02637385658db3c46e7462562f22fa056830e0");
 
 ?>

@@ -2,7 +2,7 @@
 
 	require "vendor/autoload.php";
 
-	$ac = new ActiveCampaign("API_URL", "API_KEY");
+	$ac = new ActiveCampaign("https://gmalheros.api-us1.com", "17ece2c4f3f72cd1fe280b84d0e23ae1fd02637385658db3c46e7462562f22fa056830e0");
 
 	if (!(int)$ac->credentials_test()) {
 		echo "<p>Access denied: Invalid credentials (URL and/or API key).</p>";

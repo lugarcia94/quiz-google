@@ -83,7 +83,7 @@ function limitSubmit() {
     } else {
         var result = parseInt(value) + 1;
         sessionStorage.setItem("Try", result);
-        if (result > 10)
+        if (result > 999)
             return true;
     }
     return false;
@@ -119,31 +119,29 @@ function send_info() {
     $('#show-me').show();
     var icone = document.getElementById('icone').innerHTML = "AGUARDE ENQUANTO PREPARAMOS SEU CARTÃO";
     var traking = $('#traking_id').val();
-    var link = 'http://altotieteweb.com.br/cartao-de-credito-banco-pan/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
-    if (resp1 == 1) {
+    // var link = 'https://altotieteweb.com.br/cartao-de-credito-banco-pan/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+
+    if (resp1 == 1 && resp3 == 2) {
         link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
-    if (resp1 == 2) {
+    if (resp1 == 2 && resp3 == 2) {
+
         link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+    }
+    if (resp1 == 4 && resp3 == 2) {
+        link = 'https://altotieteweb.com.br/cartao-de-credito-banco-pan/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
     if (resp1 == 3) {
-        link = 'http://altotieteweb.com.br/superdigital-nao-consulta-spc-serasa/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
-    }
-    if (resp2 == 1 && resp3 == 1) {
-        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
-    }
-    if ((resp2 == 2 || resp2 == 3 || resp2 == 4) && resp3 == 1) {
-        link = 'http://altotieteweb.com.br/superdigital-nao-consulta-spc-serasa/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
-    }
-
-    if ((resp2 == 2)) {
-        link = 'http://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+        link = 'https://altotieteweb.com.br/superdigital-nao-consulta-spc-serasa/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
 
     if ((resp3 == 1)) {
-        link = 'http://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+        link = 'https://altotieteweb.com.br/superdigital-nao-consulta-spc-serasa/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
     }
 
+    if ((resp2 == 1)) {
+        link = 'https://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card/?utm_source=google&utm_medium=cpc&utm_campaign=quiz' + traking;
+    }
 
     var nome = $('#nome_send').val();
     var email = $('#email_send').val();
@@ -191,6 +189,7 @@ function send_info() {
 
             },
             success: function (retorno) {
+                console.log(retorno)
 
                 if (retorno == "5") {
                     $('#show-me').hide();
