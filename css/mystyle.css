@@ -290,23 +290,27 @@ footer {
 @media(max-width: 991px) {
      #respostas_id button:before  {
           content: '';
-          width: 20px;
-          height: 20px;
+          width: 15px;
+          height: 15px;
           display: block;
           position: absolute;
           background: #fff;
           border-radius: 50%;
           top: 50%;
           transform: translateY(-50%);
+          left: 15px;
       }
      
      #respostas_id button{
-         width: 90%;
+         width: 96%;
          margin: 5px auto;
          position: relative;
          font-size: 15px;
          height: 50px;
          border-radius: 25px;
+         padding-left: 33px;
+         padding: 0 0 0 33px;
+         line-height: 17px;
      }
 
      img#picture {display: none}
