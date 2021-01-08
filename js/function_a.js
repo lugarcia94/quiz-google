@@ -191,32 +191,32 @@ function send_info() {
             success: function (retorno) {
                 console.log(retorno)
 
-                // if (retorno == "5") {
-                //     $('#show-me').hide();
-                //     // $("#email_send").addClass("is-invalid");
-                //     document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
-                //     return;
-                // }
-                fbq('track', 'Botão Quiz no Alto Tietê');
-                ga('send', 'event', 'Quiz', 'QuizLead', '');
-                $.ajax({
-                    url: "active/examples.php",
-                    type: 'POST',
-                    data: {
-                        'param1': nome,
-                        'param2': email,
-                        'param3': lista,
-                        'param4': q1,
-                        'param5': q2,
-                        'param6': q3,
-                        'param7': user_id,
-                        'param8': gam_utmsource,
-                        'param9': gam_utmmedium,
-                        'param10': gam_utmcampaign
-                    },
-                    dataType: 'html'
-                });
+                if (retorno == "5") {
+                    //     $('#show-me').hide();
+                    //     // $("#email_send").addClass("is-invalid");
+                    //     document.getElementById('icone').innerHTML = "VER MEU CARTÃO DE CRÉDITO";
+                    //     return;
 
+                    fbq('track', 'Botão Quiz no Alto Tietê');
+                    ga('send', 'event', 'Quiz', 'QuizLead', '');
+                    $.ajax({
+                        url: "active/examples.php",
+                        type: 'POST',
+                        data: {
+                            'param1': nome,
+                            'param2': email,
+                            'param3': lista,
+                            'param4': q1,
+                            'param5': q2,
+                            'param6': q3,
+                            'param7': user_id,
+                            'param8': gam_utmsource,
+                            'param9': gam_utmmedium,
+                            'param10': gam_utmcampaign
+                        },
+                        dataType: 'html'
+                    });
+                }
                 window.location.href = link;
 
             },
