@@ -199,6 +199,12 @@ function send_info() {
 
                     fbq('track', 'Botão Quiz no Alto Tietê');
                     ga('send', 'event', 'Quiz', 'QuizLead', '');
+
+
+                    window.location.href = link;
+                } else {
+                    fbq('track', 'Botão Quiz no Alto Tietê');
+                    ga('send', 'event', 'Quiz', 'QuizLead', '');
                     $.ajax({
                         url: "active/examples.php",
                         type: 'POST',
@@ -216,8 +222,9 @@ function send_info() {
                         },
                         dataType: 'html'
                     });
+                    window.location.href = link;
                 }
-                window.location.href = link;
+
 
             },
             error: function (erro, er) {
