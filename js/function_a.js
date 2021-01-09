@@ -202,7 +202,10 @@ function send_info() {
 
 
                     window.location.href = link;
+
+                    console.log('email invalido')
                 } else {
+                    console.log('email valido')
                     fbq('track', 'Botão Quiz no Alto Tietê');
                     ga('send', 'event', 'Quiz', 'QuizLead', '');
                     $.ajax({
