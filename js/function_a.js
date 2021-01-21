@@ -100,9 +100,9 @@ function send_info() {
     var resp2 = $('#resp_2').val();
     var resp3 = $('#resp_3').val();
     var user_id = getCookie('_ga');
-    var q1 = ['Limite de Crédito Alto', 'Crédito imediato', 'Sem consulta ao SPC/SERASA', 'Anuidade grátis'];
-    var q2 = ['Aposentado | Pensionista | Servidor Público', 'Concurseiro | Estudante universitario', 'Carteira assinada | Autonomo | Empreendedor', 'Estou Desempregado</button>'];
-    var q3 = ['Sim', 'Não'];
+    var q1 = ['limite-de-credito', 'credito-imediato', 'sem-consulta', 'anuidade-gratis'];
+    var q2 = ['aposentado-pensionista', 'estudande-concurseiro', 'empregado-carteira-assinada', 'desempregado'];
+    var q3 = ['negativado', ''];
     q1 = q1[(resp1 - 1)];
     q2 = q2[(resp2 - 1)];
     q3 = q3[(resp3 - 1)];
@@ -203,11 +203,14 @@ function send_info() {
 
                     window.location.href = link;
 
-                    console.log('email invalido')
+
                 } else {
-                    console.log('email valido')
+
                     fbq('track', 'Botão Quiz no Alto Tietê');
+
                     ga('send', 'event', 'Quiz', 'QuizLead', '');
+
+
                     $.ajax({
                         url: "active/examples.php",
                         type: 'POST',
@@ -225,6 +228,9 @@ function send_info() {
                         },
                         dataType: 'html'
                     });
+
+
+
                     window.location.href = link;
                 }
 

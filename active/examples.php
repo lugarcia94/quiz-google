@@ -34,6 +34,7 @@
                 "last_name"                     => "",
                 "p[{$lista}]"                           => $lista,
                 "status[{$lista}]"              => 1, // "Active" status
+                'tags' => Array($INTERESSE_QUIZ,$FONTE_DE_RENDA, $NEGATIVADO, 'google'),
                 // "field[%INTERESSE_QUIZ%,0]"     => $INTERESSE_QUIZ,
                 // "field[%FONTE_DE_RENDA%,0]"     => $FONTE_DE_RENDA,
                 // "field[%NEGATIVADO%,0]"         => $NEGATIVADO,
