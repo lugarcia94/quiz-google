@@ -121,28 +121,32 @@ function send_info() {
     var traking = $('#traking_id').val();
     // var link = 'https://altotieteweb.com.br/cartao-de-credito-banco-pan' + traking;
 
-    if (resp1 == 1 && resp3 == 2) {
-        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis' + traking;
-    }
-    if (resp1 == 2 && resp3 == 2) {
+    // if (resp1 == 1 && resp3 == 2) {
+    //     link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis' + traking;
+    // }
+    // if (resp1 == 2 && resp3 == 2) {
 
-        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis' + traking;
-    }
-    if (resp1 == 4 && resp3 == 2) {
-        link = 'https://altotieteweb.com.br/cartao-de-credito-banco-pan' + traking;
-    }
-    if (resp1 == 3) {
-        link = 'https://altotieteweb.com.br/bmg-card-o-cartao-para-negativado' + traking;
-    }
+    //     link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis' + traking;
+    // }
+    // if (resp1 == 4 && resp3 == 2) {
+    //     link = 'https://altotieteweb.com.br/cartao-de-credito-banco-pan' + traking;
+    // }
+    // if (resp1 == 3) {
+    //     link = 'https://altotieteweb.com.br/bmg-card-o-cartao-para-negativado' + traking;
+    // }
 
+    // if ((resp3 == 1)) {
+    //     link = 'https://altotieteweb.com.br/bmg-card-o-cartao-para-negativado' + traking;
+    // }
+
+    // if ((resp2 == 1)) {
+    //     link = 'https://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card' + traking;
+    // }
     if ((resp3 == 1)) {
         link = 'https://altotieteweb.com.br/bmg-card-o-cartao-para-negativado' + traking;
+    } else {
+        link = 'https://altotieteweb.com.br/santander-sx-anuidade-gratis' + traking;
     }
-
-    if ((resp2 == 1)) {
-        link = 'https://altotieteweb.com.br/cartao-de-credito-consignado-bmg-card' + traking;
-    }
-
     var nome = $('#nome_send').val();
     var email = $('#email_send').val();
     var r = $('#listaactive_id').val();

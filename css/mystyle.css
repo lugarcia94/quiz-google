@@ -106,14 +106,14 @@ header.bg-color, footer.bg-color.d-flex.justify-content-between .links a {
 
 /* bordas do quiz */
 .bordas {
-     border-radius: 20px;
+     border-radius: 5px;
 }
 
 
 /* 3 imagens debaixo do quiz */
 .bottom-quiz {
      background-color: #e9ecef;
-     border-radius: 0 0 20px 20px;
+     border-radius: 0 0 5px 5pxpx;
      display: flex;
      flex-flow: nowrap row;
      justify-content: space-around;
@@ -299,6 +299,7 @@ footer {
           top: 50%;
           transform: translateY(-50%);
           left: 15px;
+          box-shadow: 0 0px 6px rgb(133 134 136);
       }
      
      #respostas_id button{
@@ -307,7 +308,7 @@ footer {
          position: relative;
          font-size: 15px;
          height: 50px;
-         border-radius: 25px;
+         border-radius: 5px;
          padding-left: 33px;
          padding: 0 0 0 33px;
          line-height: 17px;
@@ -316,3 +317,21 @@ footer {
      img#picture {display: none}
 }
 
+.bg-primary.text-white {
+     box-shadow: 0 7px 7px rgb(233 236 239);
+     background: none!important;
+     color: #000!important;
+     border: 1px solid #e9ecef;
+ }
+
+ .bg-primary.text-white:hover {
+     background: #e9ecef!important
+ }
+
+
+ button#icone {
+     background: #007bff!important;
+     font-size: 14px!important;
+     color: #fff!important;
+
+ }
